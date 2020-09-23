@@ -45,7 +45,7 @@ class GoogleAuth extends React.Component {
             return (
                 <button onClick={this.onSignOutClick} type="button" className="btn btn-danger">
                     <img src={this.userProfile.getImageUrl()} className='rounded-circle'></img>
-                    Sign Out
+                    Welcome, {this.userProfile.getName()}! Sign Out
                 </button>
             )
         } else {

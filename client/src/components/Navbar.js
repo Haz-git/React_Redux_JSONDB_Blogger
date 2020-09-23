@@ -1,4 +1,8 @@
+//Pkgs
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+//Components
 import GoogleAuth from './GoogleAuth';
 
 const Navbar = () => {
@@ -11,8 +15,8 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav ml-auto">
-                        <a className="nav-link active" href="#">Home <span className="sr-only">(current)</span></a>
-                        <a className="nav-link" href="#">My Blog Posts</a>
+                        <Link className="nav-link active" to='/'>Home <span className="sr-only">(current)</span></Link>
+                        <Link className="nav-link" to='/blog/bloglist'>My Blog Posts</Link>
                         <GoogleAuth />
                     </div>
                 </div>
