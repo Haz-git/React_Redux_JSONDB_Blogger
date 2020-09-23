@@ -1,6 +1,7 @@
 import React from 'react';
 import { signIn, signOut } from '../redux/oAuth/authActions';
 import { connect } from 'react-redux';
+import '../css/googleAuth.css';
 
 
 class GoogleAuth extends React.Component {
@@ -43,7 +44,7 @@ class GoogleAuth extends React.Component {
         } else if (this.props.isSignedIn) {
             return (
                 <button onClick={this.onSignOutClick} type="button" className="btn btn-danger">
-                    <img src={this.userProfile.getImageUrl()} className='rounded-circle img-thumbnail'></img>
+                    <img src={this.userProfile.getImageUrl()} className='rounded-circle'></img>
                     Sign Out
                 </button>
             )
