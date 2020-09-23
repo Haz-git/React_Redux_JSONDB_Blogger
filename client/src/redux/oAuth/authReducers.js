@@ -1,5 +1,5 @@
-import SIGN_OUT from './authConstants';
-import SIGN_IN from './authConstants';
+import {SIGN_OUT} from './authConstants';
+import {SIGN_IN} from './authConstants';
 
 //Reducers for user login:
 
@@ -20,3 +20,5 @@ const authReducer = (state = initialState, action) => {
 }
 
 //... state = returns a new object with changed values for the isSignedIn and userId keys.
+
+export default authReducer;
