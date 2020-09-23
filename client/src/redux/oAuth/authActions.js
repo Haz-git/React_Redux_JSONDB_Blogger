@@ -1,5 +1,5 @@
-import SIGN_IN from './authConstants';
-import SIGN_OUT from './authConstants';
+import { SIGN_IN } from './authConstants';
+import { SIGN_OUT } from './authConstants';
 
 //Action creators for User Authentication:
 
