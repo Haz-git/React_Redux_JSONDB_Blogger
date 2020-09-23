@@ -14,6 +14,7 @@ class GoogleAuth extends React.Component {
                 })
                 .then(() => {
                     this.auth = window.gapi.auth2.getAuthInstance();
+                    this.userProfile = this.auth.currentUser.get().getBasicProfile();
                     this.onAuthChange(this.auth.isSignedIn.get());
                     this.auth.isSignedIn.listen(this.onAuthChange);
                 });
@@ -42,13 +43,14 @@ class GoogleAuth extends React.Component {
         } else if (this.props.isSignedIn) {
             return (
                 <button onClick={this.onSignOutClick} type="button" className="btn btn-danger">
+                    <img src={this.userProfile.getImageUrl()} className='rounded-circle img-thumbnail'></img>
                     Sign Out
                 </button>
             )
         } else {
             return (
                 <button onClick={this.onSignInClick} type='button' className="btn btn-primary">
-                    Sign In With Google
+                    Sign In With Google!
                 </button>
             )
         }
