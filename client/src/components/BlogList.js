@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlogs } from '../redux/blog/blogActions';
+import { Link } from 'react-router-dom';
 
 const BlogList = ({fetchBlogs, blogList, currentUserId }) => {
     //Call our action creator on component render:
@@ -29,7 +30,7 @@ const BlogList = ({fetchBlogs, blogList, currentUserId }) => {
             return (
                 <div>
                     <div>
-                        {blog.title}
+                        <Link to={`/blog/show/${blog.id}`} >{blog.title}</Link>
                     </div>
                     <div>
                         {blog.description}

@@ -1,3 +1,16 @@
 {
-    "blogposts": []
+  "blogposts": [
+    {
+      "title": "First Post Test",
+      "description": "Hope it Works!",
+      "userId": "115874772931261383997",
+      "id": 1
+    },
+    {
+      "title": "Second Post Test",
+      "description": "Testing to see the state.",
+      "userId": "115874772931261383997",
+      "id": 2
+    }
+  ]
 }
