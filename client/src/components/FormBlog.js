@@ -4,19 +4,22 @@ import { values } from 'lodash';
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
+//Have to manually hoist this to prevent re-rendering on first change.
+const renderInput = ({ input, label }) => {
+    return (
+        <div>
+            <label>{label}</label>
+            <input {...input}></input>
+        </div>
+    )
+}
+
 const FormBlog = ({ handleSubmit, onSubmit }) => {
 
     //To make sure this renderInput correctly submits its values to the provided handleSubmit passed to onSubmit, your must pass '{...field.input}' because the field object is passed to whatever component is defined in Field, and the input property contains all the onChange handlers/magic required to send your stuff.
-    const renderInput = ({ input, label }) => {
-        return (
-            <div>
-                <label>{label}</label>
-                <input {...input}></input>
-            </div>
-        )
-    }
 
     const handleOnSubmit = (formValues) => {
+        console.log(formValues);
         onSubmit(formValues);
     }
 
