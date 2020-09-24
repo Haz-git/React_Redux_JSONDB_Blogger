@@ -12,7 +12,9 @@ import {
 } from './blogConstants';
 
 //createBlog must make a Post request to axios db.json server.
-export const createBlog = () => {
+export const createBlog = formValues => async (dispatch, getState) => {
+    const { userId } = getState().auth;
+    //grab userId from the state of auth (if user is logged in)
     return {
         type: CREATE_BLOG,
         payload:
