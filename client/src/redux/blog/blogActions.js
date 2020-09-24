@@ -38,5 +38,15 @@ export const fetchBlogs = () => async dispatch => {
         type: FETCH_BLOGS,
         payload: response.data
     })
+}
 
+//fetchBlog retrieves an individual Blog according to the Id.
+
+export const fetchBlog = id => async dispatch => {
+    const response = await blogApi.get(`/blogposts/${id}`);
+
+    dispatch({
+        type: FETCH_BLOG,
+        payload: response.data
+    });
 }
