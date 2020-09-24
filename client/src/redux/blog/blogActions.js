@@ -26,3 +26,17 @@ export const createBlog = formValues => async (dispatch, getState) => {
 
     history.push('/');
 }
+
+//fetchBlogs must make a GET request to JSON server, retrieve the array of blog posts:
+
+export const fetchBlogs = () => async dispatch => {
+    const response = await blogApi.get('/blogposts');
+    //We are just 'getting' the entire array list here.
+
+    //When we get this data back we'll dispatch it to our state.
+    dispatch({
+        type: FETCH_BLOGS,
+        payload: response.data
+    })
+
+}
