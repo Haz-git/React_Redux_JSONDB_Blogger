@@ -3,12 +3,27 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlogs } from '../redux/blog/blogActions';
 
-const BlogList = ({fetchBlogs, blogList }) => {
-
+const BlogList = ({fetchBlogs, blogList, currentUserId }) => {
+    //Call our action creator on component render:
     useEffect(() => {
         fetchBlogs();
     },[])
 
+    //helper function that determines whether a blog post is the user's. If the blog post is the user's--render an edit or delete button. 
+
+    const renderButtons = (blog) => {
+        if (blog.userId === currentUserId) {
+            return (
+                <div>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </div>
+            )
+        }
+    }
+
+
+    //helper function used to render out each object in the array:
     const renderList = () => {
         return blogList.map(blog => {
             return (
@@ -19,6 +34,7 @@ const BlogList = ({fetchBlogs, blogList }) => {
                     <div>
                         {blog.description}
                     </div>
+                    {renderButtons(blog)}
                 </div>
             )
         });
@@ -27,7 +43,7 @@ const BlogList = ({fetchBlogs, blogList }) => {
 
     return (
         <div>
-            <h1>Welcome, Here is the top trending blogs!</h1>
+            <h1>Welcome, Here are the top trending blogs!</h1>
             <div>
                 {renderList()}
             </div>
@@ -38,7 +54,8 @@ const BlogList = ({fetchBlogs, blogList }) => {
 const mapStateToProps = state => {
     return {
         isSignedIn: state.auth.isSignedIn,
-        blogList: Object.values(state.blog)
+        blogList: Object.values(state.blog),
+        currentUserId: state.auth.userId
     }
 }
 
