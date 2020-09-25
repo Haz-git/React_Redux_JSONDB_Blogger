@@ -17,6 +17,9 @@ import BlogHeader from './LandingPage/BlogHeader';
 //History Object:
 import history from '../history';
 
+//main css:
+import '../css/main.css';
+
 
 
 export const App = () => {

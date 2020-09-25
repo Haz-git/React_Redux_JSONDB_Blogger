@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlogs } from '../redux/blog/blogActions';
 import { Link } from 'react-router-dom';
-//components
+import './LandingPage/css/blogList.css';
 
 const BlogList = ({fetchBlogs, blogList, currentUserId, isSignedIn}) => {
     //Call our action creator on component render:
@@ -29,8 +29,8 @@ const BlogList = ({fetchBlogs, blogList, currentUserId, isSignedIn}) => {
         if (blog.userId === currentUserId) {
             return (
                 <div>
-                    <Link to={`/blog/edit/${blog.id}`}><button>Edit</button></Link>
-                    <Link to={`/blog/delete/${blog.id}`}><button>Delete</button></Link>
+                    <Link to={`/blog/edit/${blog.id}`}><button className='btn btn-info'>Edit</button></Link>
+                    <Link to={`/blog/delete/${blog.id}`}><button className='btn btn-danger'>Delete</button></Link>
                 </div>
             )
         }
@@ -41,14 +41,16 @@ const BlogList = ({fetchBlogs, blogList, currentUserId, isSignedIn}) => {
     const renderList = () => {
         return blogList.map(blog => {
             return (
-                <div>
-                    <div>
+                <div className='indiv-blog-container'>
+                    <div className='blog-header'>
                         <Link to={`/blog/show/${blog.id}`} >{blog.title}</Link>
                     </div>
-                    <div>
+                    <div className='blog-desc'>
                         {blog.description}
                     </div>
-                    {renderButtons(blog)}
+                    <div className='blog-buttons-container'>
+                        {renderButtons(blog)}
+                    </div>
                 </div>
             )
         });
@@ -57,11 +59,13 @@ const BlogList = ({fetchBlogs, blogList, currentUserId, isSignedIn}) => {
 
     return (
         <div>
-            <div>
-                {renderList()}
-            </div>
-            <div>
-                {renderCreateButton()}
+            <div className='bloglist-main-container'>
+                <div className='bloglist-container'>
+                    {renderList()}
+                    <div className='create-button-container'>
+                        {renderCreateButton()}
+                    </div>
+                </div>
             </div>
         </div>
     )
