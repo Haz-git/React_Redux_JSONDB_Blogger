@@ -25,8 +25,8 @@
 }
 
 .blog-header {
+    color: skyblue;
     font-size: 22px;
-    cursor: pointer;
     text-decoration: none;
 }
 
@@ -49,4 +49,20 @@
 .create-button-container {
     padding: 40px 40px;
     text-align: center;
+}
+
+/* CSS specifics for MyBlogList */
+
+.info-box-container {
+    padding: 40px 40px;
+    text-align: center;
+    color: white;
+}
+
+.info-header h2 {
+    font-size: 60px;
+}
+
+.info-desc p {
+    font-size: 30px;
 }

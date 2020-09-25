@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-
 import { fetchBlogs } from '../redux/blog/blogActions';
+import Fade from 'react-reveal/Fade';
+
+//CSS: We will reuse the blogList container CSS from the landing page.
+import './LandingPage/css/blogList.css';
 
 const MyBlogList = (props) => {
 
@@ -14,29 +17,59 @@ const MyBlogList = (props) => {
             return props.blogList.map(blog => {
                 if (blog.userId === props.userId) {
                     return (
-                        <div>
-                            <div>
-                                {blog.title}
+                        <Fade left>
+                            <div className='indiv-blog-container'>
+                                <div className='blog-header'>
+                                    {blog.title}
+                                </div>
+                                <div className='blog-desc'>
+                                    {blog.description}
+                                </div>
                             </div>
-                            <div>
-                                {blog.description}
-                            </div>
-                        </div>
+                        </Fade>
                     )
                 }
             });
         }
+    }
+
+    const renderInfoBox = () => {
+        if (props.isSignedIn) {
+            return (
+                <Fade right>
+                    <div className='info-box-container'>
+                        <div className='info-header'>
+                            <h2>Hey There!</h2>
+                        </div>
+                        <div className='info-desc'>
+                            <p>We've grabbed all your notes!</p>
+                        </div>
+                    </div>
+                </Fade>
+            )
+        }
 
         return (
-            <div>
-                Please login to view your own Blog posts!
-            </div>
+            <Fade right>
+                <div className='info-box-container'>
+                    <div className='info-header'>
+                        <h2>Hey There!</h2>
+                    </div>
+                    <div className='info-desc'>
+                        <p>I'm Sorry, we don't know who you are! Please login!</p>
+                    </div>
+                </div>
+            </Fade>
         )
     }
 
 
+
     return (
-        <div>{renderMyBlogs()}</div>
+        <div>
+            {renderMyBlogs()}
+            {renderInfoBox()}
+        </div>
     )
 }
 
