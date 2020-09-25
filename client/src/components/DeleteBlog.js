@@ -13,6 +13,7 @@ const DeleteBlog = (props) => {
 
     const handleDelete = () => {
         props.deleteBlog(props.match.params.id);
+        history.push('/');
     }
 
     const handleCancel = () => {
