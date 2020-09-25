@@ -1,0 +1,15 @@
+.delete-main-container {
+    text-align: center;
+}
+
+.delete-buttons-container {
+    padding: 20px 20px;
+}
+
+.delete-details-container {
+    color: white;
+}
+
+.delete-buttons-container button {
+    margin: 5px 10px;
+}

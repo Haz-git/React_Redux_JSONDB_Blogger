@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlog, deleteBlog } from '../redux/blog/blogActions';
 import history from '../history';
+import '../css/deleteBlog.css';
 
 const DeleteBlog = (props) => {
 
@@ -21,15 +22,15 @@ const DeleteBlog = (props) => {
     }
 
     return (
-        <div>
-            <h1>Are you sure you want to delete:</h1>
-            <div>
+        <div className='delete-main-container'>
+            <h1>Are You Sure? You Are Deleting:</h1>
+            <div className='delete-details-container'>
                 <h2>{props.blog.title}</h2>
                 <p>{props.blog.description}</p>
             </div>
-            <div>
-                <button onClick={handleDelete}>Delete</button>
-                <button onClick={handleCancel}>Go Back</button>
+            <div className='delete-buttons-container'>
+                <button className='btn btn-danger' onClick={handleDelete}>Delete</button>
+                <button className='btn btn-success' onClick={handleCancel}>Go Back</button>
             </div>
         </div>
     )

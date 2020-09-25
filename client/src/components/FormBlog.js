@@ -1,8 +1,13 @@
-import { values } from 'lodash';
+
 //This component should be linked to CreateBlog, user submission values should be transferred to CreateBlog and generate a blog.
 
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import history from '../history';
+
+//CSS
+import '../css/formBlog.css';
+
 
 //Have to manually hoist this to prevent re-rendering on first change.
 const renderInput = ({ input, label }) => {
@@ -23,13 +28,26 @@ const FormBlog = ({ handleSubmit, onSubmit }) => {
         onSubmit(formValues);
     }
 
+    const handleGoBack = () => {
+        history.push('/');
+    }
+
     return (
-        <div>
+        <div className='form-main-container'>
             <form onSubmit={handleSubmit(handleOnSubmit)}>
-                <Field name='title' component={renderInput} label='Enter Title'  ></Field>
-                <Field name='description' component={renderInput} label='Write a Description'></Field>
-                <button type='submit' className='btn btn-primary'>Submit</button>
-                <button type='reset' className='btn btn-danger'>Reset</button>
+                <div className='title-container'>
+                    <label>Please Enter a New Title</label>
+                    <Field name='title' component={renderInput}></Field>
+                </div>
+                <div className='desc-container'>
+                    <label>Please Enter a New Description</label>
+                    <Field name='description' component={renderInput}></Field>
+                </div>
+                <div className='button-container'>
+                    <button type='submit' className='btn btn-primary'>Submit</button>
+                    <button type='reset' className='btn btn-danger'>Reset</button>
+                    <button onClick={() => handleGoBack}className='btn btn-success'>Go Back</button>
+                </div>
             </form>
         </div>
     )
