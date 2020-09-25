@@ -16,7 +16,7 @@ const BlogList = ({fetchBlogs, blogList, currentUserId }) => {
         if (blog.userId === currentUserId) {
             return (
                 <div>
-                    <button>Edit</button>
+                    <Link to={`/blog/edit/${blog.id}`}><button>Edit</button></Link>
                     <button>Delete</button>
                 </div>
             )

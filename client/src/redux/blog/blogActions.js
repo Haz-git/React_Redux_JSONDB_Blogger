@@ -50,3 +50,16 @@ export const fetchBlog = id => async dispatch => {
         payload: response.data
     });
 }
+
+//editBlog submits a patch Request to a certain Id to replace the data inside of it:
+
+export const editBlog = (id, formValues) => async dispatch => {
+    const response = await blogApi.patch(`/blogposts/${id}`, formValues);
+
+    dispatch({
+        type: EDIT_BLOG,
+        payload: response.data
+    })
+
+    history.push('/');
+}
