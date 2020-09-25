@@ -63,3 +63,16 @@ export const editBlog = (id, formValues) => async dispatch => {
 
     history.push('/');
 }
+
+//deleteBlog submits a delete request:
+
+export const deleteBlog = id => async dispatch => {
+    const response = await blogApi.delete(`/blogposts/${id}`);
+
+    dispatch({
+        type: DELETE_BLOG,
+        payload: id
+    })
+
+    history.push('/');
+}

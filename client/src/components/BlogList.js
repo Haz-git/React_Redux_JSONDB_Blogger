@@ -17,7 +17,7 @@ const BlogList = ({fetchBlogs, blogList, currentUserId }) => {
             return (
                 <div>
                     <Link to={`/blog/edit/${blog.id}`}><button>Edit</button></Link>
-                    <button>Delete</button>
+                    <Link to={`/blog/delete/${blog.id}`}><button>Delete</button></Link>
                 </div>
             )
         }
