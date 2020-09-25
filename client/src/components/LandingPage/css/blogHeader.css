@@ -1,0 +1,10 @@
+.blog-header-container {
+    padding: 20px 20px;
+    background-color:rgb(53, 59, 65);
+}
+
+.blog-header-container h2 {
+    color: white;
+    text-align: center;
+    font-size: 28px;
+}

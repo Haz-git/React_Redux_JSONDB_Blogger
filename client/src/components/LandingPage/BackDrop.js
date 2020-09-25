@@ -1,6 +1,6 @@
 import React from 'react';
 import backdrop from '../../imgs/notes_backdrop.jpg';
-import './backDrop.css';
+import './css/backDrop.css';
 
 //This component serves as the backdrop image 
 
@@ -12,7 +12,7 @@ const BackDrop = () => {
             </div>
             <div className='backdrop-words-container'>
                 <h1>Welcome to Notely.</h1>
-                <h2>Share Notes. Collect Notes. Learn Better.</h2>
+                <h2>Share Notes. Read Notes. Learn Better.</h2>
             </div>
         </div>
     )

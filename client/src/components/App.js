@@ -12,6 +12,7 @@ import EditBlog from './EditBlog';
 import ShowBlog from './ShowBlog';
 import MyBlogList from './MyBlogList';
 import BackDrop from './LandingPage/BackDrop';
+import BlogHeader from './LandingPage/BlogHeader';
 
 //History Object:
 import history from '../history';
@@ -27,6 +28,7 @@ export const App = () => {
                 </Fade>
                 <Fade bottom>
                     <BackDrop />
+                    <BlogHeader />
                 </Fade>
                 <Switch>
                     <Route exact path='/' component={BlogList} />

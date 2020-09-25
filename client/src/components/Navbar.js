@@ -16,7 +16,7 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav ml-auto">
                         <Link className="nav-link active" to='/'>Home <span className="sr-only">(current)</span></Link>
-                        <Link className="nav-link" to='/blog/mybloglist'>My Blog Posts</Link>
+                        <Link className="nav-link" to='/blog/mybloglist'>My Notes</Link>
                         <GoogleAuth />
                     </div>
                 </div>
