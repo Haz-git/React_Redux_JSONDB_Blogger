@@ -1,28 +1,52 @@
 {
   "blogposts": [
     {
-      "title": "First Post Test",
-      "description": "Hope it Works!",
+      "title": "JavaScript 101",
+      "description": "Let's Start Learning JavaScript!",
       "userId": "115874772931261383997",
       "id": 1
     },
     {
-      "title": "asdfasdfasdddddddd",
-      "description": "23421234",
+      "title": "JavaScript 102",
+      "description": "Types and Conditionals",
       "userId": "115874772931261383997",
       "id": 3
     },
     {
-      "title": "asdfadsf",
-      "description": "32232432",
+      "title": "JavaScript 103",
+      "description": "Looping and Promises",
       "userId": "115874772931261383997",
       "id": 4
     },
     {
-      "title": "asdfasdf",
-      "description": "1234213432",
-      "userId": "115874772931261383997",
+      "title": "Coding: Hidden Aliens",
+      "description": "Deep-dive into the mysterious life of a software developer. Are they even real people? Experts believe that software engineers/developers are bio-machines running on coffee--hidden in plain sight...",
+      "userId": "",
       "id": 5
+    },
+    {
+      "title": "How I Learned To Throw A Boomerang",
+      "description": "I've always wanted to throw a boomerang, and have it come back, unlike my ex-girlfriend. You can too...",
+      "userId": "",
+      "id": 6
+    },
+    {
+      "title": "Bananas: A Radioactive Mystery",
+      "description": "Why were bananas created? Answer: the government. The government has created Bananas in order to control the people through radioactive emissions...",
+      "userId": "",
+      "id": 7
+    },
+    {
+      "title": "Cup Noodle Ranking",
+      "description": "Having lived my life on Instant Ramen, I have curated a complete list of my personal favorite instant ramen brands...",
+      "userId": "",
+      "id": 8
+    },
+    {
+      "title": "How I Became a Self-Taught Software Engineer",
+      "description": "It all started when COVID-19 quarantine happened. Since my lab was closed down for about 3 months, I picked up a 'Crash-Course' Python book. It was the best decision of my life...",
+      "userId": "",
+      "id": 9
     }
   ]
 }

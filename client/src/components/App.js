@@ -27,7 +27,7 @@ export const App = () => {
                     <Route exact path='/blog/delete/:id' component={DeleteBlog} />
                     <Route exact path='/blog/edit/:id' component={EditBlog} />
                     <Route exact path='/blog/show/:id' component={ShowBlog} />
-                    <Route exact path='/blog/bloglist' component={MyBlogList} />
+                    <Route exact path='/blog/mybloglist' component={MyBlogList} />
                 </Switch>
             </Router>
         </div>
