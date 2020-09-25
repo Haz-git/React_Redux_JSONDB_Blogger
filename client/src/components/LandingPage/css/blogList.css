@@ -45,3 +45,8 @@
 .blog-buttons-container button {
     margin: 2px 4px;
 }
+
+.create-button-container {
+    padding: 40px 40px;
+    text-align: center;
+}

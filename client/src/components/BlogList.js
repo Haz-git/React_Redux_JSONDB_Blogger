@@ -3,7 +3,14 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlogs } from '../redux/blog/blogActions';
 import { Link } from 'react-router-dom';
+import Fade from 'react-reveal/Fade';
+
+//CSS
 import './LandingPage/css/blogList.css';
+
+//backdrop components:
+import BackDrop from './LandingPage/BackDrop';
+import BlogHeader from './LandingPage/BlogHeader';
 
 const BlogList = ({fetchBlogs, blogList, currentUserId, isSignedIn}) => {
     //Call our action creator on component render:
@@ -16,7 +23,7 @@ const BlogList = ({fetchBlogs, blogList, currentUserId, isSignedIn}) => {
         //Identifies if User has signed in, if yes, enabled ability to create a new Blog Post:
         if (isSignedIn) {
             return (
-                <Link to='/blog/create'><button>Create</button></Link>
+                <Link to='/blog/create'><button className='btn btn-primary'>Create A New Note</button></Link>
             )
         } else {
             return null;
@@ -59,14 +66,20 @@ const BlogList = ({fetchBlogs, blogList, currentUserId, isSignedIn}) => {
 
     return (
         <div>
-            <div className='bloglist-main-container'>
-                <div className='bloglist-container'>
-                    {renderList()}
+            <Fade bottom>
+                <BackDrop />
+                <BlogHeader />
+            </Fade>
+            <Fade bottom>
+                <div className='bloglist-main-container'>
+                    <div className='bloglist-container'>
+                        {renderList()}
+                    </div>
                     <div className='create-button-container'>
                         {renderCreateButton()}
                     </div>
                 </div>
-            </div>
+            </Fade>
         </div>
     )
 }

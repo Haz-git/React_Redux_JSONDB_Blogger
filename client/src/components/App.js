@@ -29,10 +29,6 @@ export const App = () => {
                 <Fade top>
                     <Navbar />
                 </Fade>
-                <Fade bottom>
-                    <BackDrop />
-                    <BlogHeader />
-                </Fade>
                 <Switch>
                     <Route exact path='/' component={BlogList} />
                     <Route exact path='/blog/create' component={CreateBlog} />
