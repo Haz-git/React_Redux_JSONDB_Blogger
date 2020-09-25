@@ -1,0 +1,34 @@
+.backdrop-container {
+    position: relative;
+    text-align: center;
+}
+
+.img-container img {
+    height: 40vh;
+    width: 100%;
+}
+
+.backdrop-words-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.backdrop-words-container h1 {
+    font-size: 60px;
+}
+
+.backdrop-words-container h2 {
+    font-size: 30px;
+}
+
+@media screen and (max-width: 700px) {
+    .backdrop-words-container h1 {
+        font-size: 28px;
+    }
+
+    .backdrop-words-container h2 {
+        font-size: 20px;
+    }
+}

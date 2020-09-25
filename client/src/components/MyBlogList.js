@@ -26,6 +26,12 @@ const MyBlogList = (props) => {
                 }
             });
         }
+
+        return (
+            <div>
+                Please login to view your own Blog posts!
+            </div>
+        )
     }
 
 

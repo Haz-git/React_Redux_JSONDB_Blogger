@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlogs } from '../redux/blog/blogActions';
 import { Link } from 'react-router-dom';
+//components
 
 const BlogList = ({fetchBlogs, blogList, currentUserId, isSignedIn}) => {
     //Call our action creator on component render:
@@ -56,7 +57,6 @@ const BlogList = ({fetchBlogs, blogList, currentUserId, isSignedIn}) => {
 
     return (
         <div>
-            <h1>Welcome, Here are the top trending blogs!</h1>
             <div>
                 {renderList()}
             </div>
